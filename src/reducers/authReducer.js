@@ -1,5 +1,10 @@
-export default function(state = {}, action) {
+import { FETCH_USER } from '../actions/types';
+import { fetchUser } from '../actions/index';
+
+export default function(state = null, action) {
   switch (action.type) {
+    case FETCH_USER:
+      return action.payload || false; //empty string is falsy
     default:
       return state;
   }
