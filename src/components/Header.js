@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'; //used for storing state
 import { Link } from 'react-router-dom'; //routing elements within a react page
+import Payments from './Payments';
 
 class Header extends Component {
   renderContent() {
@@ -11,16 +12,19 @@ class Header extends Component {
       case false: //user is not logged in
         return (
           <li>
-            <a href="/auth/google">Login With Google</a>
+            <a href="/auth/google">Login With Google</a>;
           </li>
         );
       default:
         //user is logged in
-        return (
-          <li>
+        return [
+          <li key="1">
+            <Payments />
+          </li>,
+          <li key="2">
             <a href="/api/logout">Logout</a>
           </li>
-        );
+        ];
     }
   }
 
