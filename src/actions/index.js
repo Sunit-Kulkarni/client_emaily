@@ -7,5 +7,12 @@ export const fetchUser = () => async dispatch => {
   const res = await axios.get('/api/current_user');
   dispatch({ type: FETCH_USER, payload: res.data });
   //wait until response gets back from api and only then will the action be dispatched
+  //type of action dispatched is FETCH_USER
   //payload is axios response object
+};
+
+export const handleToken = token => async dispatch => {
+  const res = await axios.post('/api/stripe', token);
+  dispatch({ type: FETCH_USER, payload: res.data });
+  //dispatch updates user model in authreducer
 };
