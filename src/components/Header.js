@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux'; //used for storing state
+import { Link } from 'react-router-dom'; //routing elements within a react page
 
 class Header extends Component {
   renderContent() {
+    //render content depending on user logged in
     switch (this.props.auth) {
-      case null: //returns nothing back
+      case null: //returns nothing back. Page can just hang
         return;
       case false: //user is not logged in
         return (
