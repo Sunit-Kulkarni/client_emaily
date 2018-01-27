@@ -5,15 +5,16 @@ import { Link } from 'react-router-dom';
 class Header extends Component {
   renderContent() {
     switch (this.props.auth) {
-      case null:
+      case null: //returns nothing back
         return;
-      case false:
+      case false: //user is not logged in
         return (
           <li>
             <a href="/auth/google">Login With Google</a>
           </li>
         );
       default:
+        //user is logged in
         return (
           <li>
             <a href="/api/logout">Logout</a>
