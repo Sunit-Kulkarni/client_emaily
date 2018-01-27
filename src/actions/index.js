@@ -15,4 +15,5 @@ export const handleToken = token => async dispatch => {
   const res = await axios.post('/api/stripe', token);
   dispatch({ type: FETCH_USER, payload: res.data });
   //dispatch updates user model in authreducer
+  //this action creator posts the stripe token to the backend
 };
