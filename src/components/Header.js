@@ -7,6 +7,7 @@ class Header extends Component {
   renderContent() {
     //render content depending on user logged in
     switch (this.props.auth) {
+      //user model is fetched from this.props.auth which is being produced by authReducer
       case null: //returns nothing back. Page can just hang
         return;
       case false: //user is not logged in
@@ -20,6 +21,9 @@ class Header extends Component {
         return [
           <li key="1">
             <Payments />
+          </li>,
+          <li key="3" style={{ margin: '0 10px' }}>
+            Credits: {this.props.auth.credits}
           </li>,
           <li key="2">
             <a href="/api/logout">Logout</a>
