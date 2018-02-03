@@ -17,3 +17,7 @@ export const handleToken = token => async dispatch => {
   //dispatch updates user model in authreducer
   //this action creator posts the stripe token to the backend
 };
+
+export const submitSurvey = values => {
+  return { type: 'submit_survey' };
+};
