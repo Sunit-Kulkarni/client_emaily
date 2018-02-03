@@ -29,5 +29,5 @@ class SurveyNew extends Component {
 }
 
 export default reduxForm({
-  form: 'surveyForm' //clears out form values if user exits
+  form: 'surveyForm' //clears out form values if user exits since we didn't set destroyOnUnmount
 })(SurveyNew);
