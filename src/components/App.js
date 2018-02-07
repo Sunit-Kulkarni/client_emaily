@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 //import GoogleMap from './GoogleMap';
+import Map from './Map';
 
 import Header from './Header';
 import Landing from './Landing';
@@ -25,6 +26,7 @@ class App extends Component {
           <Route exact path="/" component={Landing} />
           <Route exact path="/surveys" component={Dashboard} />
           <Route path="/surveys/new" component={SurveyNew} />
+          <Route path="/map" component={Map} />
         </div>
       </BrowserRouter>
     );
