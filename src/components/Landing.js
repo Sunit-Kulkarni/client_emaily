@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 const Landing = () => {
   return (
@@ -6,7 +7,9 @@ const Landing = () => {
       <h1>Emaily!</h1>
       Collect feedback from your users
       <br />
-      <button>See SF!</button>
+      <button className="btn" onClick={axios.get('/map/cities')}>
+        See SF!
+      </button>
     </div>
   );
 };
